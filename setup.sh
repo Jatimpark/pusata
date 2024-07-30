@@ -564,13 +564,13 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
 print_success "Swap 1 G"
 }
 
-function ins_Fail2ban(){
+#function ins_Fail2ban(){
 clear
-print_install "Menginstall Fail2ban"
-apt -y install fail2ban > /dev/null 2>&1
-sudo systemctl enable --now fail2ban
-/etc/init.d/fail2ban restart
-/etc/init.d/fail2ban status
+#print_install "Menginstall Fail2ban"
+#apt -y install fail2ban > /dev/null 2>&1
+#sudo systemctl enable --now fail2ban
+#/etc/init.d/fail2ban restart
+#/etc/init.d/fail2ban status
 
 # Instal DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
@@ -636,7 +636,7 @@ print_install "Restarting  All Packet"
 /etc/init.d/openvpn restart
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
-/etc/init.d/fail2ban restart
+#/etc/init.d/fail2ban restart
 /etc/init.d/vnstat restart
 systemctl restart haproxy
 /etc/init.d/cron restart
@@ -651,7 +651,7 @@ systemctl restart haproxy
     systemctl enable --now haproxy
     systemctl enable --now netfilter-persistent
     systemctl enable --now ws
-    systemctl enable --now fail2ban
+#    systemctl enable --now fail2ban
 history -c
 echo "unset HISTFILE" >> /etc/profile
 
@@ -788,7 +788,7 @@ clear
     ins_openvpn
     ins_backup
     ins_swab
-    ins_Fail2ban
+#    ins_Fail2ban
     ins_epro
     ins_restart
     menu
