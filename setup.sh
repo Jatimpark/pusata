@@ -234,20 +234,20 @@ function pasang_domain() {
 echo -e ""
 clear
     echo -e "   .----------------------------------."
-echo -e "   |\e[1;32mPlease Select a Domain Type Below \e[0m|"
+echo -e "   |\e[0;32mPlease Select a Domain Type Below \e[0m|"
 echo -e "   '----------------------------------'"
-echo -e "     \e[1;32m1)\e[0m Menggunakan Domain Sendiri ( Usahakan )"
-echo -e "     \e[1;32m2)\e[0m Menggunakan Domain Random"
+echo -e "     \e[0;32m1)\e[0m Menggunakan Domain Sendiri ( Usahakan )"
+echo -e "     \e[0;32m2)\e[0m Menggunakan Domain Random"
 echo -e "   ------------------------------------"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
 echo ""
 if [[ $host == "1" ]]; then
-echo -e "   \e[1;32mPlease Enter Your Subdomain $NC"
-echo -e "\033[1;96m___________________________________________\033[0m"
+echo -e "   \e[0;32mPlease Enter Your Subdomain $NC"
+echo -e "\033[0;96m___________________________________________\033[0m"
 echo -e ""
 read -p "   Masukan Domain: " host1
 echo -e ""
-echo -e "\033[1;96m___________________________________________\033[0m"
+echo -e "\033[0;96m___________________________________________\033[0m"
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 echo $host1 > /etc/xray/domain
 echo $host1 > /root/domain
@@ -270,30 +270,6 @@ restart_system(){
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m" 
 clear
-clear
-TIMES="10"
-CHATID="2052109732"
-KEY="6626843753:AAEn7IAm0ljZhrafiohwD8E939A_aAtBQQY"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
-    TIMEZONE=$(printf '%(%H:%M:%S)T')
-    TEXT="
-<code>────────────────────</code>
-<b> AUTOSCRIPT PREMIUM </b>
-<code>────────────────────</code>
-<code>User     :</code><code>$username</code>
-<code>Domain   :</code><code>$domain</code>
-<code>IPVPS    :</code><code>$MYIP</code>
-<code>ISP      :</code><code>$ISP</code>
-<code>DATE     :</code><code>$DATEVPS</code>
-<code>Time     :</code><code>$TIMEZONE</code>
-<code>Exp Sc.  :</code><code>$exp</code>
-<code>────────────────────</code>
-<b> happy new year 2024 </b>
-<code>────────────────────</code>
-<i>Automatic Notifications From Github</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://wa.me/+6281931615811"}]]}' 
-
-    curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 clear
 # Pasang SSL
@@ -661,7 +637,7 @@ clear
 # banner
 echo "Banner /etc/arya.txt" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/arya.txt"@g' /etc/default/dropbear
-wget -O /etc/arya.txt "${REPO}Baner/issue.net"
+wget -O /etc/arya.txt "${REPO}files/issue.net"
 print_success "oyes"
 }
 
