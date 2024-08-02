@@ -234,20 +234,20 @@ function pasang_domain() {
 echo -e ""
 clear
     echo -e "   .----------------------------------."
-echo -e "   |\e[0;32mPlease Select a Domain Type Below \e[0m|"
+echo -e "   |\e[1;32mPlease Select a Domain Type Below \e[0m|"
 echo -e "   '----------------------------------'"
-echo -e "     \e[0;32m1)\e[0m Menggunakan Domain Sendiri ( Usahakan )"
-echo -e "     \e[0;32m2)\e[0m Menggunakan Domain Random"
+echo -e "     \e[1;32m1)\e[0m Menggunakan Domain Sendiri ( Usahakan )"
+echo -e "     \e[1;32m2)\e[0m Menggunakan Domain Random"
 echo -e "   ------------------------------------"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
 echo ""
 if [[ $host == "1" ]]; then
-echo -e "   \e[0;32mPlease Enter Your Subdomain $NC"
-echo -e "\033[0;96m___________________________________________\033[0m"
+echo -e "   \e[1;32mPlease Enter Your Subdomain $NC"
+echo -e "\033[1;96m___________________________________________\033[0m"
 echo -e ""
 read -p "   Masukan Domain: " host1
 echo -e ""
-echo -e "\033[0;96m___________________________________________\033[0m"
+echo -e "\033[1;96m___________________________________________\033[0m"
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 echo $host1 > /etc/xray/domain
 echo $host1 > /root/domain
@@ -269,6 +269,7 @@ restart_system(){
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m" 
+clear
 clear
 }
 clear
@@ -637,8 +638,11 @@ clear
 # banner
 echo "Banner /etc/arya.txt" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/arya.txt"@g' /etc/default/dropbear
+
+# Ganti Banner
 wget -O /etc/arya.txt "${REPO}files/issue.net"
-print_success "oyes"
+print_success "Banernya"
+
 }
 
 function ins_epro(){
