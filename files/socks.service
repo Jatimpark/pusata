@@ -1,6 +1,6 @@
 [Unit]
-Description=Python Proxy Tunneling
-Documentation=https://wa.me/6281931615811
+Description=Python Proxy AryaTunneling
+Documentation=https://t.me/WongPusattA1
 After=network.target nss-lookup.target
 
 [Service]
