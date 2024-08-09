@@ -67,17 +67,13 @@
           ]
        },
        "streamSettings":{
-        "network": "ws",
-        "wsSettings": {
-          "path": "/",
-          "alpn": [
-            "h2",
-            "http/1.1"
-          ]
-        }
-      }
-    },
-    {
+         "network": "ws",
+            "wsSettings": {
+                "path": "/vmess"
+           }
+         }
+       },
+       {
       "listen": "127.0.0.1",
       "port": "10003",
       "protocol": "trojan",
