@@ -58,7 +58,7 @@ clear
 
 
 
-REPO="https://raw.githubusercontent.com/Jatimpark/pusata/main/Cfg/"
+REPO="https://raw.githubusercontent.com/Jatimpark/pusata/main/config/"
 # fixhap fix Haproxy
 clear
 echo -e "${BlueCyan} ------------------------- ${Xark} "
